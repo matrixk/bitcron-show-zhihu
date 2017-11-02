@@ -16,7 +16,7 @@ html
             ul.AppHeader-nav
               a.AppHeader-navItem(href="/", target="_blank")= '首页'
               a.AppHeader-navItem(href="/archive", target="_blank")= '发现'
-              a.AppHeader-navItem(href="/categories", target="_blank")= '话题'
+              a.AppHeader-navItem(href="/category", target="_blank")= '话题'
       
         .QuestionPage
           .QuestionHeader
@@ -24,7 +24,7 @@ html
               .QuestionHeader-topics
                 if post.metadata.zhihu_tags
                   for zhihu_tags in post.metadata.zhihu_tags
-                    a.Tag.QuestionTopic(href="./")=zhihu_tags
+                    a.Tag.QuestionTopic(href="/tag/{{zhihu_tags}}")=zhihu_tags
                   h2.QuestionHeader-title= post.title
                 if post.metadata.zhihu_quesdes
                   span.QuestionHeader-detail=post.metadata.zhihu_quesdes
