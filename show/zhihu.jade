@@ -25,7 +25,10 @@ html
                 if post.metadata.zhihu_tags
                   for zhihu_tags in post.metadata.zhihu_tags
                     a.Tag.QuestionTopic(href="/tag/{{zhihu_tags}}")=zhihu_tags
-                  h2.QuestionHeader-title= post.title
+                else
+                  for tag in post.tags
+                    a.Tag.QuestionTopic(href="/tag/{{tag}}")=tag
+                h2.QuestionHeader-title= post.title
                 if post.metadata.zhihu_quesdes
                   span.QuestionHeader-detail=post.metadata.zhihu_quesdes
               .QuestionHeader-main.QuestionHeader-footer-main
