@@ -10,14 +10,15 @@
 
 ## 使用方法
 
+从[github地址](https://github.com/matrixk/bitcron-includes_show_template-zhihu/)下载模板文件
+
+在自己的Bitcron根目录里，`template`文件夹下，把`show`文件夹放进去，然后检查一下`zhihu.jade`、`zhihu.scss`和`zhihu_icon.png`是不是都在
+
 ### 在文章内直接调用
-
-参考[在 Markdown 中引入快捷模板](https://pi.bitcron.com/post/markdown/includes_show_template)
-
-在自己的Bitcron根目录里，`template`文件夹下，把`show`文件夹放进去，检查一下是不是有`zhihu.jade`、`zhihu.scss`和`zhihu_icon.png`这三个文件
 
 如果需要在文章内直接调用，在文章里写下如下语句：
 
+参考[在 Markdown 中引入快捷模板](https://pi.bitcron.com/post/markdown/includes_show_template)
 
 > \`\`\`code
 > +h.show("zhihu")
