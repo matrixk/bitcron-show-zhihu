@@ -1,62 +1,11 @@
 $blue: #2d84cc;
 
-
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
 body {
-    line-height: 1;
-}
-ol, ul {
-    list-style: none;
-    color: #bbb;
-}
-blockquote, q {
-    quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-
-/*body--------------------------------------*/
-
-body {
-  background-color: #ddd;
-  margin: 0 23vw;
-  line-height: 2em;
+    max-width: 900px;
+    font-family: Cambria, "Microsoft Yahei", sans-serif;
+    background-color: #ddd;
+    line-height: 2em;
+    margin: 0 auto;
 }
 
 main {
@@ -64,6 +13,8 @@ main {
   padding: 0em 0em;
   margin: 0 0em;
 }
+
+/*body--------------------------------------*/
 
 nav {
     background-color: #fff;
@@ -163,7 +114,7 @@ a.QuestionHeader-detail:hover {
 }
 
 .Question-mainColumn {
-    padding: 3em 2em;
+    padding: 3em 2em 0 2em;
 }
 
 .ContentItem {
@@ -225,12 +176,17 @@ img.md_compiled {
 }
 
 a.md_compiled {
-    color: #434343;
+    color: #000;
     text-decoration: none;
     border-bottom-width: 1px;
     border-bottom-style: outset;
-    border-bottom-color: #434343;
+    border-bottom-color: #474747;
 }
+
+a.md_compiled:hover {
+    font-weight: bold;
+}
+
 
 blockquote {
   padding-left:1em;
@@ -239,20 +195,9 @@ blockquote {
   border-left:4px solid #cfd8e6
 }
 
-ol {
-    list-style-type: decimal;
-    list-style-position: outside;
-    margin: 1em;
-    color: #434343;
-    padding-left: 0.2em;
-}
-
-ul {
-    list-style-type: disc;
-    list-style-position: outside;
-    margin: 1em;
-    color: #434343;
-    padding-left: 0.2em;
+ul, ol {
+    padding-left: 2em;
+    padding-right: 1em;
 }
 
 .AnswerSticky {
@@ -318,12 +263,43 @@ a:hover {
   text-decoration: none;
 }
 
+/* Comments-------------------------------------*/
+
+.doc_comments {
+    padding: 0 0 45px;
+}
+
+.postpager {
+    text-align: center;
+    margin: 1em auto;
+    max-width: 900px;
+    display: flow-root;
+}
+
+a.next_post {
+    float: right;
+    margin: 0.2em 2em;
+    text-align: right;
+}
+
+a.next_post:hover {
+    font-weight: bold;
+}
+
+a.pre_post {
+    float: left;
+    margin: 0.2em 2em;
+}
+
+a.pre_post:hover {
+    font-weight: bold;
+}
+
 /* Responsive ----------------------------------*/
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 900px) {
   body {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
-    background-color:$dark;
   }
   .title {
       display: inline-block;
@@ -348,26 +324,41 @@ a:hover {
   h1.QuesTitle {
     margin-left: 1em;
   }
-  ol {
-    list-style-type: decimal;
-    list-style-position: outside;
-    margin: 1em;
-    color: #434343;
-    padding-left: 0.2em;
-  }
-
-  ul {
-    list-style-type: disc;
-    list-style-position: outside;
-    margin: 1em;
-    color: #434343;
-    padding-left: 0.2em;
-  }
 
   .AnswerStickyButtonBar {
     display: block;
     width: auto;
     margin: 1em 0em;
     color: #6b7a8c;
+  }
+  .doc_comments {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .doc_comments .comments .sub_comments {
+    padding-left: 0;
+    padding: 0;
+  }
+  .content {
+    margin: auto 20px;
+  }
+  ul.sub_comments {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+  .comment_content {
+    margin: 1em!important;
+  }
+  .author {
+    margin: 1em!important;
+  }
+  .doc_comments .comments .comment {
+    padding: 0 !important;
+    background-color: #fff;
+    border: 1px solid rgba(150, 150, 150, 0.18)!important;
+    margin: 30px 0 0;
+    list-style: none;
+    border-radius: 5px;
+    word-break: break-word;
   }
 }
